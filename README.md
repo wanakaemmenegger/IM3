@@ -1,2 +1,5 @@
-# IM3
- Leistungsnachweis IM3
+# Kursbeschreibung des Projekts
+ca 500 Zeichen
+# Learnings
+# Schwierigkeiten
+# Benutze Ressourcen
