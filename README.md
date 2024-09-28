@@ -1,5 +1,6 @@
-# Kursbeschreibung des Projekts
+# Dokumentation
+## Kursbeschreibung des Projekts
 ca 500 Zeichen
-# Learnings
-# Schwierigkeiten
-# Benutze Ressourcen
+## Learnings
+## Schwierigkeiten
+## Benutze Ressourcen
