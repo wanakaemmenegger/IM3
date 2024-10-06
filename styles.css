@@ -1,0 +1,174 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Century Gothic', sans-serif;
+}
+
+body {
+    background-color: #F6F5F5;
+    color: #516272;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.header-content {
+    flex: 1;
+}
+
+.header h1 {
+    font-family: 'Cherry Bomb One', Arial, Helvetica, sans-serif;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.header p {
+    font-size: 1.5rem;
+    color: #516272;
+    margin-top: 10px;
+}
+
+.car-icon {
+    width: 40%;
+    margin-left: 20px;
+}
+
+/* Button Section */
+.button-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn {
+    color: #F6F5F5;
+    background-color: #A4B6BD;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn.active, .btn:hover {
+    background-color: #516272;
+}
+
+/* Placeholder for Statistics */
+.statistics-placeholder {
+    text-align: center;
+    background-color: #FFFFFF;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.placeholder {
+    color: #999;
+    font-size: 1.2rem;
+}
+
+/* Key Messages Section */
+.key-messages {   
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.key-messages h2 {
+    font-family: 'Cherry Bomb One', Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #516272;
+}
+
+.message-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.message {
+    background-color: #F9FAFB;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 30%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.message:hover {
+    background-color: #81AEC182;
+}
+
+.message h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.message p {
+    font-size: 0.9rem;
+    color: #516272;
+}
+
+.message img {
+    width: 20%;
+    margin-bottom: 15px;
+}
+
+/* Footer Section */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #516272;
+    border-radius: 8px;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    color: #F9FAFB;
+}
+
+/* Responsive Layout: Stack the messages vertically on smaller screens */
+@media (max-width: 768px) {
+    .message-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .message {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .message:last-child {
+        margin-bottom: 0; /* Remove margin for the last item */
+    }
+
+    /* Responsive: Stack the header content vertically */
+    .header {
+        flex-direction: column;
+    }
+
+    .car-icon {
+        margin: 20px 0 0;
+        width: 60%;
+    }
+}
