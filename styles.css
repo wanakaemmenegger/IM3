@@ -156,6 +156,7 @@ body {
     .message {
         width: 100%;
         margin-bottom: 20px;
+        transition: height 0.3s ease-in-out;
     }
 
     .message:last-child {
