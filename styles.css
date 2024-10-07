@@ -11,6 +11,23 @@ body {
     color: #516272;
 }
 
+p {
+    font-size: 1rem;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+}
+
+h2 {
+    font-family: 'Cherry Bomb One', Arial, Helvetica, sans-serif;
+    text-align: left;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #516272;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -23,7 +40,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
 }
 
 .header-content {
@@ -34,6 +51,7 @@ body {
     font-family: 'Cherry Bomb One', Arial, Helvetica, sans-serif;
     font-size: 4rem;
     font-weight: bold;
+    padding-left: 40px;
 }
 
 .header p {
@@ -92,11 +110,7 @@ body {
 }
 
 .key-messages h2 {
-    font-family: 'Cherry Bomb One', Arial, Helvetica, sans-serif;
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #516272;
 }
 
 .message-box {
@@ -134,16 +148,32 @@ body {
 }
 
 /* Footer Section */
-.footer {
+.banner {
     text-align: center;
     padding: 10px;
     background-color: #516272;
     border-radius: 8px;
 }
 
-.footer p {
+.banner p {
     font-size: 0.9rem;
     color: #F9FAFB;
+    padding-bottom: 0;
+}
+
+.banner h2 {
+    font-family: century gothic;    
+    font-size: 2rem;
+    border: 2px solid #F9FAFB;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    display: inline-block;
+    color: #F9FAFB;
+    text-align: center;
+    margin-bottom: 0;
 }
 
 /* Responsive Layout: Stack the messages vertically on smaller screens */
