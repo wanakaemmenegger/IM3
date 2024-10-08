@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="styles.css">
         <favelicon href="images/car.png">
         <script src="script/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+
     </head>
 <body>
     <!-- Main Container -->
@@ -36,9 +38,10 @@
 
         <!-- Placeholder for Statistics -->
         <section class="statistics-placeholder">
-            <!-- This section will be added later with PHP -->
-            <div class="placeholder">Statistik-Bereich (Platzhalter)</div>
+            <h1>Parkhaus Übersicht</h1>
+            <canvas id="parkhausChart" width="400" height="200"></canvas>
         </section>
+              
 
         <!-- Key Messages Section -->
         <section class="key-messages">
@@ -67,5 +70,6 @@
             <p>ein Projekt von Ricarda und Wanaka</p>
         </footer>
     </div>
+    <script src="beispiel.js"></script>
 </body>
 </html>
