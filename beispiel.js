@@ -7,7 +7,7 @@ async function fetchHourlyParkingData() {
             throw new Error('Netzwerkantwort war nicht ok');
         }
         const data = await response.json();
-        const hourlyData = processHourlyData(data);
+        const hourlyData = processParkingData(data);
         createHourlyBarChart(hourlyData);
     } catch (error) {
         console.error('Fehler beim Abrufen der stündlichen Daten:', error);
@@ -15,7 +15,7 @@ async function fetchHourlyParkingData() {
 }
 
 // Funktion zur Verarbeitung der stündlichen Daten
-function processHourlyData(data) {
+function processParkingData(data) {
     const hourlyData = [];
 
     // Gruppierung der Daten nach Stunden (dies erfordert eine spezifische Datenstruktur des Servers)

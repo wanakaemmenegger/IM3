@@ -12,9 +12,9 @@ try {
 
     // SQL-Abfrage, die nur die Datensätze auswählt, bei denen `parkhaus_id` nicht null ist und das Datum zum `timestamp` passt
     $stmt = $pdo->prepare("
-        SELECT timestamp, parkhaus_id, parkhaus_name, parkhaus_total, parkhaus_free 
+        SELECT timestamp, pm10, pm2_5, nitrogen_dioxide
         FROM airquality_parkhaus 
-        WHERE parkhaus_id IS NOT NULL
+        WHERE parkhaus_id IS NULL
         AND DATE(timestamp) >= :date
         ORDER BY timestamp ASC
     ");

@@ -8,6 +8,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
         <favelicon href="images/car.png">
+        <script src="https://cdn.jsdelivr.net/npm/moment@2.30.1/moment.min.js"></script>
         <script src="script/script.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 
@@ -24,7 +25,8 @@
                 <h1>Schaden uns leere Parkhäuser?</h1>
                 <p>Je leerer die Parkhäuser in der Stadt Zürich sind, desto verschmutzter ist die Luft.</p>
             </div>
-            <img src="images/car.png" alt="Car Icon" class="car-icon">
+            <img src="images/Car_illustration1.png" alt="Car Icon" class="car-icon" onmouseenter="toggleCarImage()">
+            <img src="images/Car_illustration_Blink.gif" alt="Car Icon" class="car-icon hidden" onmouseleave="toggleCarImage()">
         </header>
 
         <h2>Einleitung</h2>
@@ -32,8 +34,8 @@
 
         <!-- Button Section -->
         <section class="button-section">
-            <button class="btn active">24 Stunden</button>
-            <button class="btn">7 Tage</button>
+            <button class="btn active" onclick="fetchHourlyParkingData(1); updateActiveButton()">24 Stunden</button>
+            <button class="btn" onclick="fetchHourlyParkingData(6); updateActiveButton()">7 Tage</button>
         </section>
 
         <!-- Placeholder for Statistics -->
@@ -70,6 +72,12 @@
             <p>ein Projekt von Ricarda und Wanaka</p>
         </footer>
     </div>
-    <script src="beispiel.js"></script>
+    <!-- <script src="beispiel.js"></script> -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Daten für die letzten 24 Stunden abrufen und das Diagramm erstellen
+            fetchHourlyParkingData();
+        });
+    </script>
 </body>
 </html>

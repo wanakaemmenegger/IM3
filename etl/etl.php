@@ -40,7 +40,7 @@ function fetchParkhausData() {
 
 // Function to fetch air quality data
 function fetchAirQualityData() {
-    $url = "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=47.3667&longitude=8.55&hourly=pm10,pm2_5,nitrogen_dioxide&past_days=5&forecast_days=1";
+    $url = "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=47.3667&longitude=8.55&hourly=pm10,pm2_5,nitrogen_dioxide&past_days=7&forecast_days=1";
 
     // Initialize a cURL session
     $ch = curl_init($url);
@@ -82,9 +82,11 @@ $sql = "INSERT INTO airquality_parkhaus
 // Prepare the statement
 $stmt = $pdo->prepare($sql);
 
+$pdo->prepare("DELETE FROM airquality_parkhaus WHERE pm10 IS NOT NULL")->execute();
+
 // Insert air quality data
 foreach ($dataairquality['hourly']['time'] as $index => $time) {
-    try {
+   try {
         $stmt->execute([
             ':timestamp' => $time,
             ':pm10' => $dataairquality['hourly']['pm10'][$index] ?? null,
@@ -111,7 +113,7 @@ foreach ($dataairquality['hourly']['time'] as $index => $time) {
 foreach ($dataparkhaus['lots'] as $lot) {
     try {
         $stmt->execute([
-            ':timestamp' => $dataparkhaus['last_updated'],
+            ':timestamp' => date("Y-m-d\TH") . ":00:00",
             ':pm10' => null,  // Parking data does not have air quality data
             ':pm2_5' => null,
             ':nitrogen_dioxide' => null,
