@@ -145,7 +145,7 @@ function processParkingData(data, daily=false) {
     for (const timestamp in groupedByTimestamp) {
         if (daily) {
             // Berechne die Auslastung (in Prozent) für jeden Tag
-            // Entferne Duplikate basierend auf derß parkhaus_id
+            // Entferne Duplikate basierend auf der parkhaus_id
             const totalSpaces = [...new Map(groupedByTimestamp[timestamp].map(item => [item['parkhaus_id'], item])).values()]
                 .reduce((sum, entry) => sum + entry.parkhaus_total, 0);
             const averageFreeSpaces = groupedByTimestamp[timestamp].reduce((sum, entry) => sum + entry.parkhaus_free, 0) / 24;
@@ -254,7 +254,7 @@ function createStyledBarChart(parkingData, airQualityData, daily=false) {
             plugins: {
                 title: {
                     display: true,
-                    text: daily ? 'Tägliche Parkhaus-Auslastung in den letzten 7 Tagen' : 'Stündliche Parkhaus-Auslastung in den letzten 24 Stunden',
+                    text: daily ? 'Tages-Durchschnitte der letzten 7 Tage' : 'Messungen der letzten 24 Stunden',
                     font: {
                         size: 16,
                         weight: 'bold'
@@ -296,15 +296,20 @@ function createStyledBarChart(parkingData, airQualityData, daily=false) {
                     }
                 },
                 y2: {
+                    beginAtZero: true,
+                    max: 50, // Luftqualität bis 50 µg/m³
                     title: {
                         display: true,
-                        text: 'Luftqualität in µg/m³',
+                        text: 'Luftverschmutzung in µg/m³',
                         font: {
                             size: 14
                         },
                         color: '#405c6c'
                     },
                     position: 'right',
+                    grid: {
+                        display: false  // Kein Raster auf der Luftqualitätsachse
+                    }
                 },
                 x: {
                      ticks: {
@@ -312,7 +317,7 @@ function createStyledBarChart(parkingData, airQualityData, daily=false) {
                         font: {
                             size: 12
                         },
-                        maxTicksLimit: 24  // 24 Stunden anzeigen
+                        maxTicksLimit: daily ? 7 : 24  // 7 Tage oder 24 Stunden anzeigen
                     },
                     grid: {
                         display: false  // Kein Raster auf der X-Achse
