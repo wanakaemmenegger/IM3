@@ -446,3 +446,89 @@ function toggleCarImage() {
         image.classList.toggle('hidden');
     });
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Daten per AJAX von der PHP-Datei abrufen
+    fetch('https://etl.mmp.li/Parking_Air_Quality_ZH/etl/load_airquality.php')  // Ersetze 'dein_php_dateiname.php' mit deinem tatsächlichen PHP-Dateinamen
+        .then(response => response.json())
+        .then(data => {
+            // Prüfe die Daten in der Konsole
+            console.log('Empfangene Daten:', data);
+
+            // Durchschnittswerte für die letzten 24 Stunden berechnen
+            const pm10 = data.reduce((sum, entry) => sum + parseFloat(entry.pm10), 0) / data.length;
+            const pm25 = data.reduce((sum, entry) => sum + parseFloat(entry.pm2_5), 0) / data.length;
+            const no2 = data.reduce((sum, entry) => sum + parseFloat(entry.nitrogen_dioxide), 0) / data.length;
+
+            // Das Donut-Diagramm erstellen
+            const ctx = document.getElementById('pollutionChart').getContext('2d');
+            const pollutionChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['PM 10', 'PM 2.5', 'NO2'],
+                    datasets: [{
+                        label: 'Verteilung der Verschmutzungswerte (letzte 24 Stunden)',
+                        data: [pm10, pm25, no2],
+                        backgroundColor: ['#00FF00', '#0000FF', '#FF0000'],
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false, // Verhindert, dass das Diagramm das Seitenverhältnis beibehält
+                    aspectRatio: 2.5, 
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            enabled: true,
+                            backgroundColor: '#405c6c',
+                        bodyFont: {
+                            family: 'Century Gothic', // Schriftart anpassen
+                            size: 14
+                        },
+                        titleColor: '#fff',
+                        bodyColor: '#fff',
+                        padding: 10,
+                        cornerRadius: 4,
+                        displayColors: false, // Farbboxen deaktivieren, um den Balkendiagramm-Stil anzupassen
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                let explanation;
+                                switch (tooltipItem.label) {
+                                    case 'PM 10':
+                                        explanation = 'Particulate Matter PM10: Feinstaub aus Verkehr, Bremsen- und Reifenabrieb.';
+                                        break;
+                                    case 'PM 2.5':
+                                        explanation = 'Particulate Matter PM2.5: Kleinere Feinstaubpartikel, die tiefer in die Lungen eindringen und durch Abgase freigesetzt werden.';
+                                        break;
+                                    case 'NO2':
+                                        explanation = 'Nitrogen Dioxide (NO2): Ein Schlüsselindikator für die Emissionen aus Verbrennungsmotoren.';
+                                        break;
+                                    default:
+                                        explanation = tooltipItem.label;
+                                }
+                                return tooltipItem.raw.toFixed(2) + ' µg/m³' + '\n' + explanation;
+                            }
+                        }
+                        },
+                    }
+                }
+            });
+
+            // Sicherstellen, dass der Container existiert
+            const pollutionChartContainer = document.getElementById('pollutionChartContainer');
+            if (!pollutionChartContainer) {
+                console.error('Der Container für das Diagramm wurde nicht gefunden.');
+                return;
+            }
+        
+
+        })
+        .catch(error => {
+            console.error('Fehler beim Abrufen der Daten:', error);
+        });
+});
+
+
