@@ -530,5 +530,3 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('Fehler beim Abrufen der Daten:', error);
         });
 });
-
-
