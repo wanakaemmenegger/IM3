@@ -257,7 +257,8 @@ function createStyledBarChart(parkingData, airQualityData, daily=false) {
                     text: daily ? 'Tages-Durchschnitte der letzten 7 Tage' : 'Messungen der letzten 24 Stunden',
                     font: {
                         size: 16,
-                        weight: 'bold'
+                        weight: 'bold',
+                        family: 'Century Gothic'
                     },
                     padding: {
                         top: 10,
@@ -271,6 +272,14 @@ function createStyledBarChart(parkingData, airQualityData, daily=false) {
                     enabled: false,
                     position: 'nearest',
                     external: externalTooltipHandler,
+                    bodyFont: {
+                        family: 'Century Gothic', // Tooltip-Schriftart
+                        size: 14
+                    },
+                    titleFont: {
+                        family: 'Century Gothic', // Tooltip Titel-Schriftart
+                        size: 14
+                    }
                 }
             },
             scales: {
@@ -281,7 +290,8 @@ function createStyledBarChart(parkingData, airQualityData, daily=false) {
                         display: true,
                         text: 'Auslastung Parkhäuser in Prozent',
                         font: {
-                            size: 14
+                            size: 14,
+                            family: 'Century Gothic'
                         },
                         color: '#405c6c'
                     },
@@ -291,7 +301,8 @@ function createStyledBarChart(parkingData, airQualityData, daily=false) {
                     ticks: {
                         color: '#405c6c',
                         font: {
-                            size: 12
+                            size: 12,
+                            family: 'Century Gothic'
                         }
                     }
                 },
@@ -302,7 +313,8 @@ function createStyledBarChart(parkingData, airQualityData, daily=false) {
                         display: true,
                         text: 'Luftverschmutzung in µg/m³',
                         font: {
-                            size: 14
+                            size: 14,
+                            family: 'Century Gothic'
                         },
                         color: '#405c6c'
                     },
@@ -315,7 +327,8 @@ function createStyledBarChart(parkingData, airQualityData, daily=false) {
                      ticks: {
                         color: '#405c6c',
                         font: {
-                            size: 12
+                            size: 12,
+                            family: 'Century Gothic'
                         },
                         maxTicksLimit: daily ? 7 : 24  // 7 Tage oder 24 Stunden anzeigen
                     },
@@ -431,7 +444,7 @@ const externalTooltipHandler = (context) => {
     tooltipEl.style.top = positionY + tooltip.caretY + 'px';
     tooltipEl.style.font = tooltip.options.bodyFont.string;
     tooltipEl.style.padding = tooltip.options.padding + 'px ' + tooltip.options.padding + 'px';
-  };
+};
 
 function updateActiveButton() {
     const buttons = document.querySelectorAll('.btn');
@@ -483,36 +496,36 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         tooltip: {
                             enabled: true,
-                            backgroundColor: '#405c6c',
-                        bodyFont: {
-                            family: 'Century Gothic', // Schriftart anpassen
-                            size: 14
-                        },
-                        titleColor: '#fff',
-                        bodyColor: '#fff',
-                        padding: 10,
-                        cornerRadius: 4,
-                        displayColors: false, // Farbboxen deaktivieren, um den Balkendiagramm-Stil anzupassen
-                        callbacks: {
-                            label: function(tooltipItem) {
-                                let explanation;
-                                switch (tooltipItem.label) {
-                                    case 'PM 10':
-                                        explanation = 'Particulate Matter PM10: Feinstaub aus Verkehr, Bremsen- und Reifenabrieb.';
-                                        break;
-                                    case 'PM 2.5':
-                                        explanation = 'Particulate Matter PM2.5: Kleinere Feinstaubpartikel, die tiefer in die Lungen eindringen und durch Abgase freigesetzt werden.';
-                                        break;
-                                    case 'NO2':
-                                        explanation = 'Nitrogen Dioxide (NO2): Ein Schlüsselindikator für die Emissionen aus Verbrennungsmotoren.';
-                                        break;
-                                    default:
-                                        explanation = tooltipItem.label;
+                            backgroundColor: 'rgba(0, 0, 0, 0.7)', // Tooltip Hintergrundfarbe
+                            bodyFont: {
+                                family: 'Century Gothic', // Schriftart anpassen
+                                size: 14
+                            },
+                            titleColor: '#fff',  // Tooltip Titeltextfarbe
+                            bodyColor: '#fff',   // Tooltip Textfarbe
+                            padding: 10,         // Abstand innerhalb des Tooltips
+                            cornerRadius: 3,     // Abgerundete Ecken
+                            displayColors: false, // Farbboxen deaktivieren
+                            callbacks: {
+                                label: function(tooltipItem) {
+                                    let explanation;
+                                    switch (tooltipItem.label) {
+                                        case 'PM 10':
+                                            explanation = 'Particulate Matter PM10: Feinstaub aus Verkehr, Bremsen- und Reifenabrieb.';
+                                            break;
+                                        case 'PM 2.5':
+                                            explanation = 'Particulate Matter PM2.5: Kleinere Feinstaubpartikel, die tiefer in die Lungen eindringen und durch Abgase freigesetzt werden.';
+                                            break;
+                                        case 'NO2':
+                                            explanation = 'Nitrogen Dioxide (NO2): Ein Schlüsselindikator für die Emissionen aus Verbrennungsmotoren.';
+                                            break;
+                                        default:
+                                            explanation = tooltipItem.label;
+                                    }
+                                    return tooltipItem.raw.toFixed(2) + ' µg/m³' + '\n' + explanation;
                                 }
-                                return tooltipItem.raw.toFixed(2) + ' µg/m³' + '\n' + explanation;
                             }
                         }
-                        },
                     }
                 }
             });
@@ -523,7 +536,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.error('Der Container für das Diagramm wurde nicht gefunden.');
                 return;
             }
-        
 
         })
         .catch(error => {

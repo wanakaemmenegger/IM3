@@ -23,15 +23,16 @@
         <header class="header">
             <div class="header-content">
                 <h1>Schaden uns leere Parkhäuser?</h1>
-                <p>Wie steht die Auslastung der Parkhäuser in <strong>Zürich</strong> im Verhältnis zur aktuellen Luftverschmutzung? Steigt die Verschmutzung an, sobald sich die Parkhäuser leeren? Diese ??? untersucht genau diese Fragen und vergleicht die Daten anhand von 2 APIs.</p>
-                <p>18.10.2024</p>
+                <p>Wie steht die Auslastung der Parkhäuser in <strong>Zürich</strong> im Verhältnis zur aktuellen Luftverschmutzung? Steigt die Verschmutzung an, sobald sich die Parkhäuser leeren? Dieses daten-journalistische Projekt untersucht diese Fragen und vergleicht die Daten anhand von 2 APIs.</p>
+                <p>Projekt-Stand: 18.10.2024</p>
             </div>
             <img src="images/Car_illustration1.png" alt="Car Icon" class="car-icon" onmouseenter="toggleCarImage()">
             <img src="images/Car_illustration_Blink.gif" alt="Car Icon" class="car-icon hidden" onmouseleave="toggleCarImage()">
         </header>
 
-        <h2>Einleitung</h2>
-        <p>Auf dieser Website werden aktuelle Daten zu drei wichtigen Luftqualitätswerten in Zürich erfasst: Stickstoffdioxid (NO₂), Feinstaubpartikel PM10 und Feinstaubpartikel PM2.5. Gleichzeitig wird die Auslastung der Parkhäuser als Prozentwert angegeben. Diese Informationen geben Aufschluss über die Umweltbedingungen in der Stadt und die Nutzung der Parkinfrastruktur.</p>
+        <h2>Das Projekt</h2>
+        <p>Auf dieser Website werden aktuelle Daten zu drei wichtigen Luftqualitätswerten in Zürich erfasst: Stickstoffdioxid (NO₂), Feinstaubpartikel PM10 und Feinstaubpartikel PM2.5. Gleichzeitig wird die prozentuelle Auslastung aller Parkhäuser in Zürich ausgewertet. Diese Informationen geben Aufschluss über die Umweltbedingungen im Verhältnis zur Nutzung der Parkinfrastruktur.</p>
+        <h2>Die Messungen</h2>
 
         <!-- Button Section -->
         <section class="button-section">
@@ -43,7 +44,7 @@
             <canvas id="parkhausChart" width="400" height="200"></canvas>
         </section>
 
-        <h2 class="key-messages">Verteilung der Verschmutzungswerte letzte 24 Stunden</h2>
+        <h3>Verteilung der Verschmutzungswerte letzte 24 Stunden</h3>
         <section>
             <canvas id="pollutionChart" width="400" height="400"></canvas>
         </section>  
@@ -54,17 +55,17 @@
             <h2>Kernaussagen</h2>
             <div class="message-box">
                 <div class="message">
-                    <img src="images/car-pollution (1).png" alt="Icon 1">
+                    <img src="images/car-pollution (1).png" alt="Auto mit Verschmutzung">
                     <h3>NO2 zum Feierabend</h3>
                     <p>Gegen 18:00 Uhr steigt der Schlüsselindikator der Emissionen aus Verbrennungsmotoren unter der Woche merklich an. Die Parkhausauslastung hingegen geht erst später am Abend zurück.</p>
                 </div>
                 <div class="message">
-                    <img src="images/car-pollution (1).png" alt="Icon 2">
+                    <img src="images/car-pollution (1).png" alt="Auto mit Verschmutzung">
                     <h3>Solide Parkhhaus-Ausladung</h3>
                     <p>Sowohl unter der Woche als auch am Wochenende sind die Parkhäser maximal zu 75% ausgelastet. Wer kein Parkplatz findet, steht wohl einfach im falschen Parkhaus...</p>
                 </div>
                 <div class="message">
-                    <img src="images/car-pollution (1).png" alt="Icon 3">
+                    <img src="images/car-pollution (1).png" alt="Auto mit Verschmutzung">
                     <h3>Aussage 3</h3>
                     <p>Je leerer die Parkhäuser in der Stadt Zürich sind, desto verschmutzter ist die Luft. <br> Hall ich bin ein 2. Satz.</p>
                 </div>
@@ -73,10 +74,9 @@
 
         <!-- Footer Section -->
         <footer class="banner">
-            <p>ein Projekt von Ricarda und Wanaka</p>
+            <p>ein Projekt von Ricarda und Wanaka  -  mmp23cv</p>
         </footer>
     </div>
-    <!-- <script src="beispiel.js"></script> -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             // Daten für die letzten 24 Stunden abrufen und das Diagramm erstellen
