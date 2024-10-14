@@ -258,7 +258,8 @@ function createStyledBarChart(parkingData, airQualityData, daily=false) {
                     font: {
                         size: 16,
                         weight: 'bold',
-                        family: 'Century Gothic'
+                        family: 'Century Gothic',
+                        color: '516272'
                     },
                     padding: {
                         top: 10,
@@ -483,7 +484,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         label: 'Verteilung der Verschmutzungswerte (letzte 24 Stunden)',
                         data: [pm10, pm25, no2],
                         backgroundColor: ['#00FF00', '#0000FF', '#FF0000'],
-                        hoverOffset: 4
+                        hoverOffset: 4,
+                        borderColor: '#F6F5F5',  // Hier kannst du die Rahmenfarbe festlegen
+                        borderWidth: 5           // Hier die Breite des Rahmens (auf 0 setzen, um zu entfernen)
                     }]
                 },
                 options: {

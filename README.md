@@ -12,7 +12,9 @@ ca 500 Zeichen
 
 
 Offene Punkte
-- Tool Tip Design
+- Auto Header mit ZH Kennzeichen
 - Responsive
 - Kommentare Code
-- Journalistischer teil
+- Journalistischer Inhalt
+- Code Validierung
+- Read me
