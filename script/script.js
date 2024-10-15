@@ -204,9 +204,9 @@ function createStyledBarChart(parkingData, airQualityData, daily=false) {
             {  
                 label: 'PM 10',
                 data: pm10,
-                backgroundColor: '#00FF00',
-                borderColor: '#00FF00',
-                borderWidth: 2,
+                backgroundColor: '#389F07',
+                borderColor: '#389F07',
+                borderWidth: 3,
                 type: 'line',  // Linie hinzufügen
                 yAxisID: 'y2',  // Verwende die rechte Y-Achse für die Luftqualität
                 fill: false,
@@ -215,9 +215,9 @@ function createStyledBarChart(parkingData, airQualityData, daily=false) {
             { 
                 label: 'PM 2.5',
                 data: pm25,
-                backgroundColor: '#0000FF',
-                borderColor: '#0000FF',
-                borderWidth: 2,
+                backgroundColor: '#0AA0E1',
+                borderColor: '#0AA0E1',
+                borderWidth: 3,
                 type: 'line',  // Linie hinzufügen
                 yAxisID: 'y2',  // Verwende die rechte Y-Achse für die Luftqualität
                 fill: false,
@@ -226,20 +226,18 @@ function createStyledBarChart(parkingData, airQualityData, daily=false) {
             {
                 label: 'NO2',
                 data: no2,
-                backgroundColor: '#FF0000',  // Helles Rosa für die Linie
-                borderColor: '#FF0000',
-                borderWidth: 2,
+                backgroundColor: '#D10829', 
+                borderColor: '#D10829',
+                borderWidth: 3,
                 type: 'line',  // Linie hinzufügen
                 yAxisID: 'y2',  // Verwende die rechte Y-Achse für die Luftqualität
                 fill: false,
                 xAxisID: 'x'
             },
             {
-                label: 'Parkhäuser %',
+                label: 'prozentuale Parkhaus Auslastung',
                 data: occupancyRates,
-                backgroundColor: '#97AABD',  // Helles Blau-Grau für die Balken
-                borderColor: '#405c6c',
-                borderWidth: 1,
+                backgroundColor: '#A4B6BD',  // Helles Blau-Grau für die Balken
                 yAxisID: 'y',
                 xAxisID: 'x'
             }, 
@@ -267,7 +265,7 @@ function createStyledBarChart(parkingData, airQualityData, daily=false) {
                     }
                 },
                 legend: {
-                    display: false
+                    display: true
                 },
                 tooltip: {
                     enabled: false,
@@ -275,7 +273,8 @@ function createStyledBarChart(parkingData, airQualityData, daily=false) {
                     external: externalTooltipHandler,
                     bodyFont: {
                         family: 'Century Gothic', // Tooltip-Schriftart
-                        size: 14
+                        size: 14,
+                        textAlign: 'right'
                     },
                     titleFont: {
                         family: 'Century Gothic', // Tooltip Titel-Schriftart
@@ -350,6 +349,7 @@ const getOrCreateTooltip = (chart) => {
       tooltipEl.style.background = 'rgba(0, 0, 0, 0.7)';
       tooltipEl.style.borderRadius = '3px';
       tooltipEl.style.color = 'white';
+      tooltipEl.style.textAlign = 'left';
       tooltipEl.style.opacity = 1;
       tooltipEl.style.pointerEvents = 'none';
       tooltipEl.style.position = 'absolute';
@@ -483,7 +483,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     datasets: [{
                         label: 'Verteilung der Verschmutzungswerte (letzte 24 Stunden)',
                         data: [pm10, pm25, no2],
-                        backgroundColor: ['#00FF00', '#0000FF', '#FF0000'],
+                        backgroundColor: ['#389F07', '#0AA0E1', '#D10829'],
                         hoverOffset: 4,
                         borderColor: '#F6F5F5',  // Hier kannst du die Rahmenfarbe festlegen
                         borderWidth: 5           // Hier die Breite des Rahmens (auf 0 setzen, um zu entfernen)
@@ -495,7 +495,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     aspectRatio: 2.5, 
                     plugins: {
                         legend: {
-                            display: false
+                            display: true
                         },
                         tooltip: {
                             enabled: true,
