@@ -5,17 +5,26 @@ ca 500 Zeichen
 
 
 ## Schwierigkeiten
-- Zeitformat (Sommerzeit?)
+- Zeitformat (Sommerzeit?) evtl Lücke / Doppelte Daten
 - Achse der Luftverschmutzung in beiden Statistiken gleich hoch 
 - Luftverschmutzung statt Qualiät -> negaitver
+- zu viele Daten in DB durch Forcast und stündlicher Abgleich aller Daten
+- Anpassungen Figma
+- Statistik Responsive
+- 2 Apis in DB nicht auf einer Zeile
 ## Benutze Ressourcen
 
 
 Offene Punkte
+- Kommentare Code
+- Read me
+
+
+Geschlossene Punkte
 - Favicon
 - Auto Header mit ZH Kennzeichen
-- Responsive
-- Kommentare Code
-- Journalistischer Inhalt
 - Code Validierung
-- Read me
+- Responsive
+- Journalistischer Inhalt
+- Daten mit DB ableichen
+- Fahren zu Morgen / Feierabend

@@ -256,7 +256,7 @@ function createStyledBarChart(parkingData, airQualityData, daily=false) {
                     font: {
                         size: 16,
                         weight: 'bold',
-                        family: 'Century Gothic',
+                        family: "'Century Gothic', 'Arial', sans-serif",
                         color: '516272'
                     },
                     padding: {
@@ -272,12 +272,12 @@ function createStyledBarChart(parkingData, airQualityData, daily=false) {
                     position: 'nearest',
                     external: externalTooltipHandler,
                     bodyFont: {
-                        family: 'Century Gothic', // Tooltip-Schriftart
+                        family: "'Century Gothic', 'Arial', sans-serif",
                         size: 14,
                         textAlign: 'right'
                     },
                     titleFont: {
-                        family: 'Century Gothic', // Tooltip Titel-Schriftart
+                        family: "'Century Gothic', 'Arial', sans-serif",
                         size: 14
                     }
                 }
@@ -291,7 +291,7 @@ function createStyledBarChart(parkingData, airQualityData, daily=false) {
                         text: 'Auslastung Parkhäuser in Prozent',
                         font: {
                             size: 14,
-                            family: 'Century Gothic'
+                            family: "'Century Gothic', 'Arial', sans-serif"
                         },
                         color: '#405c6c'
                     },
@@ -302,7 +302,7 @@ function createStyledBarChart(parkingData, airQualityData, daily=false) {
                         color: '#405c6c',
                         font: {
                             size: 12,
-                            family: 'Century Gothic'
+                            family: "'Century Gothic', 'Arial', sans-serif"
                         }
                     }
                 },
@@ -314,7 +314,7 @@ function createStyledBarChart(parkingData, airQualityData, daily=false) {
                         text: 'Luftverschmutzung in µg/m³',
                         font: {
                             size: 14,
-                            family: 'Century Gothic'
+                            family: "'Century Gothic', 'Arial', sans-serif"
                         },
                         color: '#405c6c'
                     },
@@ -328,7 +328,7 @@ function createStyledBarChart(parkingData, airQualityData, daily=false) {
                         color: '#405c6c',
                         font: {
                             size: 12,
-                            family: 'Century Gothic'
+                            family: "'Century Gothic', 'Arial', sans-serif"
                         },
                         maxTicksLimit: daily ? 7 : 24  // 7 Tage oder 24 Stunden anzeigen
                     },
@@ -501,7 +501,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             enabled: true,
                             backgroundColor: 'rgba(0, 0, 0, 0.7)', // Tooltip Hintergrundfarbe
                             bodyFont: {
-                                family: 'Century Gothic', // Schriftart anpassen
+                                family: "'Century Gothic', 'Arial', sans-serif",
                                 size: 14
                             },
                             titleColor: '#fff',  // Tooltip Titeltextfarbe

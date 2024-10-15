@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Century Gothic', sans-serif;
+    font-family: 'Century Gothic', 'Arial', sans-serif;
 }
 
 body {
@@ -52,7 +52,7 @@ h4 {
 
 ul {
     list-style-type: disc;
-    padding: 0 40px 40px 60px;
+    padding: 40px 40px 40px 60px;
 
 }
 
@@ -146,7 +146,8 @@ ul {
 .message-box {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 20px; /* Abstand zwischen den Flex-Elementen */
+    flex-wrap: wrap; /* Damit die Elemente bei zu wenig Platz umbrechen */
 }
 
 .message {
@@ -154,9 +155,10 @@ ul {
     border-radius: 8px;
     padding: 20px;
     text-align: center;
-    width: 30%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    flex: 1 1 calc(33.33% - 20px); /* Drei Elemente nebeneinander mit Berücksichtigung des Gaps */
+    box-sizing: border-box; /* Damit Padding und Border in die Breite eingerechnet werden */
 }
 
 .message:hover {
@@ -211,6 +213,7 @@ ul {
     display: none;
 }
 
+
 /* Responsive Layout: Stack the messages vertically on smaller screens */
 @media (max-width: 768px) {
     .message-box {
@@ -222,6 +225,7 @@ ul {
         width: 100%;
         margin-bottom: 20px;
         transition: height 0.3s ease-in-out;
+        flex: 1 1 100%; /* Auf mobilen Geräten nimmt jedes Element die volle Breite ein */
     }
 
     .message:last-child {

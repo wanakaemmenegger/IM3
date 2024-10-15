@@ -43,9 +43,10 @@
             <button class="btn" onclick="fetchHourlyParkingData(6); updateActiveButton()">7 Tage</button>
         </section>
 
-        <section class="statistics-placeholder">
-            <canvas id="parkhausChart" width="400" height="200"></canvas>
+        <section class="statistics-placeholder desktop-hidden">
+            <canvas id="parkhausChart"></canvas>
         </section>
+
 
         <h3>Verteilung der Verschmutzungswerte letzte 24 Stunden</h3>
         <section>
@@ -64,7 +65,7 @@
                 </div>
                 <div class="message">
                     <img src="images/car-pollution (1).png" alt="Auto mit Verschmutzung">
-                    <h3>Solide Parkhhaus-Auslastung</h3>
+                    <h3>Solide Parkhaus-Auslastung</h3>
                     <p>Sowohl unter der Woche als auch am Wochenende sind die Parkhäuser maximal zu 75% ausgelastet. Wer kein Parkplatz findet, steht wohl einfach im falschen Parkhaus...</p>
                 </div>
                 <div class="message">
@@ -72,22 +73,20 @@
                     <h3>Mehr Verschmutzung bei leeren Parkhäusern</h3>
                     <p>Je leerer die Parkhäuser in der Stadt Zürich sind, desto verschmutzter ist die Luft. Das zeigt sich vorallem zu den Stosszeiten unter der Woche. Dort leeren sich die Parkhäuser, da die Personen pendeln.</p>
                 </div>
-            </div>
-            <div class="message-box">
                 <div class="message">
                     <img src="images/car-pollution (1).png" alt="Auto mit Verschmutzung">
                     <h3>Verschmutzung allgemein ungefährlich</h3>
-                    <p> 18:00 Uhr steigt der Schlüsselindikator der Emissionen aus Verbrennungsmotoren unter der Woche merklich an. Die Parkhausauslastung hingegen geht erst später am Abend zurück.</p>
+                    <p>Im internationalen Vergleich sind die Verschmutzungswerte in Zürich gering. Beispielweise in Jakarta (Indonesien) sind die Werte von PM2.5 fast 10x so hoch.</p>
                 </div>
                 <div class="message">
                     <img src="images/car-pollution (1).png" alt="Auto mit Verschmutzung">
-                    <h3>Solide Parkhhaus-Auslastung</h3>
-                    <p>Sowohl unter der Woche als auch am Wochenende sind die Parkhäuser maximal zu 75% ausgelastet. Wer kein Parkplatz findet, steht wohl einfach im falschen Parkhaus...</p>
+                    <h3>Schwankender NO2 Wert</h3>
+                    <p>Die ausgeprägtesten Fluktuationen im 24 Stunden Zyklus werden beim NO2 Wert beobachtet. Er macht so im Tagesdurchschnitt über 50% der gemessenen Verschmutzung aus.</p>
                 </div>
                 <div class="message">
                     <img src="images/car-pollution (1).png" alt="Auto mit Verschmutzung">
-                    <h3>Aussage 3</h3>
-                    <p>Je leerer die Parkhäuser in der Stadt Zürich sind, desto verschmutzter ist die Luft. <br> Hall ich bin ein 2. Satz.</p>
+                    <h3>Wenig Abweichungen im Wochen-Vergleich</h3>
+                    <p>Die Schwankungen bei den Luftverschmutzungswerten bei der Wochenübersicht, wirken weniger markant. Das liegt daran, dass die stündlichen Messungen summiert und als Durchschnitt dargestellt werden. So werden kleinere Schwankungen geglättet.</p>
                 </div>
             </div>
         </section>
