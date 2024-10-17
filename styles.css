@@ -1,244 +1,265 @@
-/* General Styling */
+/* Allgemeines Styling für die gesamte Seite */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Century Gothic', 'Arial', sans-serif;
+    font-family: 'Century Gothic', 'Arial', sans-serif; /* Setzt eine einheitliche Schriftart */
 }
 
 body {
-    background-color: #F6F5F5;
-    color: #516272;
+    background-color: #F6F5F5; /* Hellgrauer Hintergrund für den gesamten Body */
+    color: #516272; /* Dunkelgraue Schriftfarbe */
 }
 
+/* Standard-Absatz-Styling */
 p {
-    font-size: 1rem;
-    padding-left: 40px;
+    font-size: 1rem; /* Schriftgröße */
+    padding-left: 40px; /* Links und rechts Padding für den Text */
     padding-right: 40px;
     padding-bottom: 40px;
 }
 
+/* Styling für H2-Überschriften */
 h2 {
-    font-family: 'Cherry Bomb One', Arial, Helvetica, sans-serif;
-    text-align: left;
+    font-family: 'Cherry Bomb One', Arial, Helvetica, sans-serif; /* Spezifische Schriftart für H2 */
+    text-align: left; /* Linksbündiger Text */
     padding-right: 40px;
     padding-left: 40px;
     padding-top: 20px;
-    margin-bottom: 20px;
-    font-size: 2rem;
-    color: #516272;
+    font-size: 2rem; /* Große Schriftgröße */
+    color: #516272; /* Farbe der H2-Überschriften */
 }
 
+/* Styling für H3-Überschriften */
 h3 {
-    font-family: century gothic;
-    text-align: center;
+    font-family: century gothic; /* Schriftart */
+    text-align: center; /* Zentrierter Text */
     padding-right: 40px;
     padding-left: 40px;
-    margin-bottom: 30px;
-    font-size: 16;
-    color: #516272;
+    margin-bottom: 30px; /* Abstand nach unten */
+    font-size: 16px; /* Schriftgröße */
+    color: #516272; /* Schriftfarbe */
 }
 
+/* Styling für H4-Überschriften */
 h4 {
-    font-family: century gothic;
+    font-family: century gothic; /* Bold und linksbündige H4-Überschriften */
     font-weight: bold;
     text-align: left;
     padding-right: 40px;
     padding-left: 40px;
     margin-bottom: 20px;
     font-size: 1.0rem;
-    color: #516272;
+    color: #516272; /* Gleiche Farbe wie H2 */
 }
 
+/* Styling für ungeordnete Listen */
 ul {
-    list-style-type: disc;
-    padding: 40px 40px 40px 60px;
-
+    list-style-type: disc; /* Bulletpoints für die Liste */
+    padding: 40px 40px 40px 60px; /* Links zusätzlicher Abstand für den Listeneinzug */
 }
 
+/* Container für die gesamte Seite */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1200px; /* Maximale Breite des Containers */
+    margin: 0 auto; /* Zentrierung des Containers */
     padding: 20px;
 }
 
-/* Header Section */
+/* Header-Bereich */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+    display: flex; /* Flexbox zur Anordnung der Header-Inhalte */
+    justify-content: space-between; /* Platzierung der Inhalte mit maximalem Abstand */
+    align-items: center; /* Vertikale Zentrierung */
+    margin-bottom: 20px; /* Abstand nach unten */
     text-align: left;
 }
 
+/* Inhalt des Headers */
 .header-content {
-    flex: 1;
+    flex: 1; /* Header-Content füllt den verfügbaren Platz */
 }
 
+/* H1 im Header */
 .header h1 {
-    font-family: 'Cherry Bomb One', Arial, Helvetica, sans-serif;
-    font-size: 3rem;
-    font-weight: bold;
+    font-family: 'Cherry Bomb One', Arial, Helvetica, sans-serif; /* Markante Schriftart */
+    font-size: 3rem; /* Sehr große Schrift */
+    font-weight: bold; /* Fettschrift */
     padding-left: 40px;
-    padding-top: 5%;
+    padding-top: 5%; /* Abstand nach oben */
 }
 
+/* Paragraph im Header */
 .header p {
-    font-size: 1.5rem;
-    color: #516272;
-    margin-top: 10px;
+    font-size: 1.5rem; /* Größerer Text für bessere Lesbarkeit */
+    color: #516272; /* Gleiche Farbe wie andere Texte */
+    margin-top: 10px; /* Kleiner Abstand nach oben */
 }
 
+/* Styling für das Auto-Icon im Header */
 .car-icon {
-    margin: 20px 50px 0 0;
-    width: 30%;
+    margin: 20px 50px 0 0; /* Abstand um das Bild herum */
+    width: 30%; /* Bild nimmt 30% der Breite ein */
 }
 
-/* Button Section */
+/* Button-Sektion für Interaktionen */
 .button-section {
-    text-align: center;
-    margin-bottom: 20px;
+    text-align: center; /* Zentrierte Schaltflächen */
+    margin-bottom: 20px; /* Abstand nach unten */
 }
 
+/* Styling für Buttons */
 .btn {
-    color: #F6F5F5;
-    background-color: #A4B6BD;
-    text-transform: uppercase;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    margin: 0 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    color: #F6F5F5; /* Weiße Schriftfarbe */
+    background-color: #A4B6BD; /* Hellgrauer Hintergrund */
+    text-transform: uppercase; /* Alle Buchstaben in Großbuchstaben */
+    border: none; /* Kein Rand */
+    border-radius: 20px; /* Abgerundete Ecken */
+    padding: 10px 20px; /* Innenabstände */
+    font-size: 1rem; /* Schriftgröße */
+    margin: 0 10px; /* Abstand zwischen den Buttons */
+    cursor: pointer; /* Zeiger-Cursor */
+    transition: background-color 0.3s ease; /* Sanfter Übergang der Hintergrundfarbe beim Hover */
 }
 
+/* Aktiver Button und Hover-Effekt */
 .btn.active, .btn:hover {
-    background-color: #516272;
+    background-color: #516272; /* Dunklere Farbe bei Hover und aktiver Auswahl */
 }
 
-/* Placeholder for Statistics */
+/* Platzhalter für die Statistik-Sektion */
 .statistics-placeholder {
-    text-align: center;
-    background-color: #FFFFFF;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    text-align: center; /* Zentrierter Inhalt */
+    background-color: #FFFFFF; /* Weißer Hintergrund */
+    padding: 40px; /* Innenabstände */
+    border-radius: 8px; /* Abgerundete Ecken */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Schatteneffekt */
+    margin-bottom: 20px; /* Abstand nach unten */
 }
 
+/* Stil für leere Platzhaltertexte */
 .placeholder {
-    color: #999;
-    font-size: 1.2rem;
+    color: #999; /* Graue Farbe */
+    font-size: 1.2rem; /* Größere Schrift */
 }
 
-/* Key Messages Section */
-.key-messages {   
-    padding: 20px;
-    margin-bottom: 20px;
-    text-align: center;
+/* Sektion für Kernaussagen */
+.key-messages {
+    padding: 20px; /* Innenabstand */
+    margin-bottom: 20px; /* Abstand nach unten */
+    text-align: center; /* Zentrierter Text */
 }
 
+/* Styling für H2 in der Kernaussagen-Sektion */
 .key-messages h2 {
-    text-align: center;
+    text-align: center; /* Überschrift zentriert */
+    margin-bottom: 20px; /* Abstand nach unten */
 }
 
+/* Flexbox für Nachrichtenboxen */
 .message-box {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px; /* Abstand zwischen den Flex-Elementen */
-    flex-wrap: wrap; /* Damit die Elemente bei zu wenig Platz umbrechen */
+    display: flex; /* Flexbox für die Nachrichten */
+    justify-content: space-between; /* Gleicher Abstand zwischen den Nachrichten */
+    gap: 20px; /* Lücke zwischen den Nachrichten */
+    flex-wrap: wrap; /* Nachrichten umbrechen, wenn der Platz knapp ist */
 }
 
+/* Einzelne Nachrichten */
 .message {
-    background-color: #F9FAFB;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    flex: 1 1 calc(33.33% - 20px); /* Drei Elemente nebeneinander mit Berücksichtigung des Gaps */
-    box-sizing: border-box; /* Damit Padding und Border in die Breite eingerechnet werden */
+    background-color: #F9FAFB; /* Heller Hintergrund */
+    border-radius: 8px; /* Abgerundete Ecken */
+    padding: 20px; /* Innenabstände */
+    text-align: center; /* Zentrierter Text */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+    margin-bottom: 20px; /* Abstand nach unten */
+    flex: 1 1 calc(33.33% - 20px); /* Drei Nachrichten nebeneinander */
+    box-sizing: border-box; /* Padding und Border in die Breite einbeziehen */
 }
 
+/* Hover-Effekt für Nachrichten */
 .message:hover {
-    background-color: #81AEC182;
+    background-color: #81AEC182; /* Hellere Farbe beim Hover */
 }
 
+/* Überschriften in Nachrichten */
 .message h3 {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+    font-size: 1.2rem; /* Größere Schriftgröße */
+    margin-bottom: 20px; /* Abstand nach unten */
 }
 
+/* Absätze in Nachrichten */
 .message p {
-    font-size: 0.9rem;
-    color: #516272;
+    font-size: 0.9rem; /* Kleinere Schriftgröße */
+    color: #516272; /* Gleiche Farbpalette */
 }
 
+/* Bilder in Nachrichten */
 .message img {
-    width: 20%;
-    margin-bottom: 15px;
+    width: 20%; /* Bilder nehmen 20% der Breite ein */
+    margin-bottom: 15px; /* Abstand nach unten */
 }
 
-/* Footer Section */
+/* Footer-Bereich */
 .banner {
-    text-align: center;
-    padding: 10px;
-    background-color: #516272;
-    border-radius: 8px;
+    text-align: center; /* Zentrierter Text */
+    padding: 10px; /* Innenabstände */
+    background-color: #516272; /* Dunkler Hintergrund */
+    border-radius: 8px; /* Abgerundete Ecken */
 }
 
+/* Text im Footer */
 .banner p {
-    font-size: 0.9rem;
-    color: #F9FAFB;
-    padding-bottom: 0;
+    font-size: 0.9rem; /* Kleinere Schrift */
+    color: #F9FAFB; /* Helle Schriftfarbe */
+    padding-bottom: 0; /* Kein Abstand nach unten */
 }
 
+/* H2 im Footer */
 .banner h2 {
     font-family: century gothic;    
-    font-size: 2rem;
-    border: 2px solid #F9FAFB;
+    font-size: 2rem; /* Große Schriftgröße */
+    border: 2px solid #F9FAFB; /* Weiße Umrandung */
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
-    border-radius: 15px;
-    display: inline-block;
-    color: #F9FAFB;
+    border-radius: 15px; /* Runde Ecken für die Box */
+    display: inline-block; /* Block für den Text */
+    color: #F9FAFB; /* Weiße Schrift */
     text-align: center;
     margin-bottom: 0;
 }
 
+/* Versteckte Elemente */
 .hidden {
-    display: none;
+    display: none; /* Elemente komplett ausblenden */
 }
 
-
-/* Responsive Layout: Stack the messages vertically on smaller screens */
+/* Responsives Layout: Nachrichten werden untereinander gestapelt bei kleineren Bildschirmen */
 @media (max-width: 768px) {
     .message-box {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Nachrichten vertikal anordnen */
+        align-items: center; /* Zentriere Nachrichten */
     }
 
     .message {
-        width: 100%;
+        width: 100%; /* Nachrichten füllen die volle Breite */
         margin-bottom: 20px;
-        transition: height 0.3s ease-in-out;
-        flex: 1 1 100%; /* Auf mobilen Geräten nimmt jedes Element die volle Breite ein */
+        transition: height 0.3s ease-in-out; /* Sanfte Übergänge für die Höhe */
+        flex: 1 1 100%; /* Nachrichten nehmen auf mobilen Geräten die volle Breite ein */
     }
 
     .message:last-child {
-        margin-bottom: 0; /* Remove margin for the last item */
+        margin-bottom: 0; /* Kein Abstand nach unten für das letzte Element */
     }
 
-    /* Responsive: Stack the header content vertically */
+    /* Responsives Layout für den Header */
     .header {
-        flex-direction: column;
+        flex-direction: column; /* Header-Elemente untereinander stapeln */
     }
 
     .car-icon {
-        margin: 20px 0 0;
-        width: 60%;
+        margin: 20px 0 0; /* Zentrierte Icons */
+        width: 60%; /* Größere Breite der Icons auf mobilen Geräten */
     }
 }

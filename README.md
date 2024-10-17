@@ -6,8 +6,7 @@ ca 500 Zeichen
 
 ## Schwierigkeiten
 - Zeitformat (Sommerzeit?) evtl Lücke / Doppelte Daten
-- Achse der Luftverschmutzung in beiden Statistiken gleich hoch 
-- Luftverschmutzung statt Qualiät -> negaitver
+
 - zu viele Daten in DB durch Forcast und stündlicher Abgleich aller Daten
 - Anpassungen Figma
 - Statistik Responsive
